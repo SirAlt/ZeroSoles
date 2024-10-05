@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ZeroSoles</string>
+    <string name="top_bar_cart">Cart</string>
+    <string name="top_bar_profile">Profile</string>
+    <string name="top_bar_search">Search</string>
+    <string name="top_bar_menu">Menu</string>
+    <string name="logo">Logo</string>
+    <string name="slogan">Sole Searching? Find Zero at ZeroSoles!</string>
+</resources>
