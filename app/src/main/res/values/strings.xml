@@ -6,4 +6,7 @@
     <string name="top_bar_menu">Menu</string>
     <string name="logo">Logo</string>
     <string name="slogan">Sole Searching? Find Zero at ZeroSoles!</string>
+    <string name="title_activity_stores_near_you">StoresNearYouActivity</string>
+    <string name="permission_rationale_location">We need your approximate location to better determine which stores are close by.</string>
+    <string name="permission_required">Location permissions are required for this feature to work.</string>
 </resources>

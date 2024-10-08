@@ -1,7 +1,9 @@
 package com.example.zerosoles.activity;
 
+import android.content.Intent;
 import android.icu.math.BigDecimal;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Shoe> shoes = new ArrayList<>(SHOES);
         ShoeAdapter shoeAdapter = new ShoeAdapter(MainActivity.this, R.layout.row_shoe, shoes);
         lvShoes.setAdapter(shoeAdapter);
+
+        ImageView icMenu = findViewById(R.id.icMenu);
+        icMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, StoresNearYouActivity.class);
+            startActivity(intent);
+        });
     }
 
     private static final List<Shoe> SHOES = new ArrayList<>();
