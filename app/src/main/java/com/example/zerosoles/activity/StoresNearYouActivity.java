@@ -9,10 +9,10 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.zerosoles.R;
 import com.example.zerosoles.utils.RationaleDialog;
@@ -28,8 +28,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class StoresNearYouActivity extends AppCompatActivity
+public class StoresNearYouActivity extends FragmentActivity
         implements
         OnMyLocationButtonClickListener,
         OnMyLocationClickListener,
@@ -76,6 +77,13 @@ public class StoresNearYouActivity extends AppCompatActivity
             m_Map.setOnMyLocationButtonClickListener(this);
             m_Map.setOnMyLocationClickListener(this);
 
+            // Set markers
+            LatLng studentCultureHouse = new LatLng(10.875331376135065, 106.80070183840535);
+            m_Map.addMarker(new MarkerOptions().position(studentCultureHouse));
+
+            LatLng fptUni = new LatLng(10.841380458141039, 106.80984005969286);
+            m_Map.addMarker(new MarkerOptions().position(fptUni));
+
             // Pan and zoom camera to current location
             FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
             CurrentLocationRequest curLocRequest = new CurrentLocationRequest.Builder()
@@ -86,7 +94,7 @@ public class StoresNearYouActivity extends AppCompatActivity
                     .addOnSuccessListener(this, location -> {
                         if (location != null) {
                             LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-                            m_Map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 19.0f));
+                            m_Map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15.0f));
                         }
                     });
         } else

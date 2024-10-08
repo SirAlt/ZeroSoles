@@ -1,54 +1,74 @@
 package com.example.zerosoles.activity;
 
 import android.content.Intent;
-import android.icu.math.BigDecimal;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.zerosoles.R;
-import com.example.zerosoles.adapter.ShoeAdapter;
-import com.example.zerosoles.model.Shoe;
+import com.example.zerosoles.fragment.Account;
+import com.example.zerosoles.fragment.Contact;
+import com.example.zerosoles.fragment.Home;
+import com.example.zerosoles.fragment.Logout;
+import com.example.zerosoles.fragment.Order;
+import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        ListView lvShoes = findViewById(R.id.lvShoes);
-        ArrayList<Shoe> shoes = new ArrayList<>(SHOES);
-        ShoeAdapter shoeAdapter = new ShoeAdapter(MainActivity.this, R.layout.row_shoe, shoes);
-        lvShoes.setAdapter(shoeAdapter);
-
-        ImageView icMenu = findViewById(R.id.icMenu);
-        icMenu.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, StoresNearYouActivity.class);
-            startActivity(intent);
-        });
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
+            navigationView.setCheckedItem(R.id.home);
+        }
     }
 
-    private static final List<Shoe> SHOES = new ArrayList<>();
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.home) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
+        } else if (item.getItemId() == R.id.orders) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Order()).commit();
+        } else if (item.getItemId() == R.id.contact) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Contact()).commit();
+        } else if (item.getItemId() == R.id.account) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Account()).commit();
+        } else if (item.getItemId() == R.id.logout) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Logout()).commit();
+        } else if (item.getItemId() == R.id.store) {
+            Intent intent = new Intent(MainActivity.this, StoresNearYouActivity.class);
+            startActivity(intent);
+        }
 
-    static {
-        SHOES.add(new Shoe(R.drawable.tidal_wave, "Tidal Wave", BigDecimal.valueOf(24.99), BigDecimal.valueOf(19.99)));
-        SHOES.add(new Shoe(R.drawable.pagosa_black, "Pagosa Black", BigDecimal.valueOf(44.49), BigDecimal.valueOf(34.98)));
-        SHOES.add(new Shoe(R.drawable.ridgeway_fallen_rock, "Ridgeway - Fallen Rock", BigDecimal.valueOf(19.50)));
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }

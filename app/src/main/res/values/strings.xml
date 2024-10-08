@@ -6,6 +6,19 @@
     <string name="top_bar_menu">Menu</string>
     <string name="logo">Logo</string>
     <string name="slogan">Sole Searching? Find Zero at ZeroSoles!</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_account">Account</string>
+    <string name="title_contact">Contact</string>
+    <string name="title_support">Support</string>
+    <string name="title_logout">Logout</string>
+    <string name="title_my_order">Orders</string>
+    <string name="title_store">Stores near you</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="title_activity_stores_near_you">StoresNearYouActivity</string>
     <string name="permission_rationale_location">We need your approximate location to better determine which stores are close by.</string>
     <string name="permission_required">Location permissions are required for this feature to work.</string>
