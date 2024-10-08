@@ -1,7 +1,9 @@
 package com.example.zerosoles.activity;
 
+import android.content.Intent;
 import android.icu.math.BigDecimal;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button btnShowMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Shoe> shoes = new ArrayList<>(SHOES);
         ShoeAdapter shoeAdapter = new ShoeAdapter(MainActivity.this, R.layout.row_shoe, shoes);
         lvShoes.setAdapter(shoeAdapter);
+        btnShowMap.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MapActivity.class);
+            startActivity(intent);
+        });
     }
 
     private static final List<Shoe> SHOES = new ArrayList<>();
