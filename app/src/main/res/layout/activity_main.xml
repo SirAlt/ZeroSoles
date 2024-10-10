@@ -1,116 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="4dp"
     tools:context=".activity.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/top_bar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_min="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/icMenu"
-            android:layout_width="@dimen/top_bar_icon_size"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/top_bar_menu"
-            android:src="@drawable/hamburger_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/icSearch"
-            android:layout_width="@dimen/top_bar_icon_size"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/top_bar_search"
-            android:src="@drawable/search"
-            app:layout_constraintBottom_toBottomOf="@id/icMenu"
-            app:layout_constraintStart_toEndOf="@id/icMenu"
-            app:layout_constraintTop_toTopOf="@id/icMenu" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="48dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/logo"
-            android:src="@drawable/logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/icProfile"
-            app:layout_constraintStart_toEndOf="@id/icSearch"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/icProfile"
-            android:layout_width="@dimen/top_bar_icon_size"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/top_bar_profile"
-            android:src="@drawable/profile"
-            app:layout_constraintBottom_toBottomOf="@id/icMenu"
-            app:layout_constraintEnd_toStartOf="@id/icCart"
-            app:layout_constraintTop_toTopOf="@id/icMenu" />
-
-        <ImageView
-            android:id="@+id/icCart"
-            android:layout_width="@dimen/top_bar_icon_size"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/top_bar_cart"
-            android:src="@drawable/cart"
-            app:layout_constraintBottom_toBottomOf="@id/icMenu"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/icMenu" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/tvSlogan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="?colorPrimary"
-        android:gravity="center"
-        android:paddingVertical="5dp"
-        android:text="@string/slogan"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_bar" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/shelf"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingHorizontal="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSlogan">
-
-        <ListView
-            android:id="@+id/lvShoes"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/row_shoe" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="56dp"
+            android:background="@color/light_primary"
+            android:elevation="4dp"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
