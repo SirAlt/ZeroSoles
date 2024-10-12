@@ -22,4 +22,19 @@
     <string name="title_activity_stores_near_you">StoresNearYouActivity</string>
     <string name="permission_rationale_location">We need your approximate location to better determine which stores are close by.</string>
     <string name="permission_required">Location permissions are required for this feature to work.</string>
+    <string name="header_title">ENJOY THE NATURAL COMFORT OF BAREFOOT SHOES</string>
+    <string name="content_title">Genuine comfort comes from letting your feet do what natural bending, flexing, moving, feeling. Xero Shoes let them do that. Our customers say it life-changing.</string>
+    <string name="heading1">Best-Selling Men\'s Shoes</string>
+    <string name="heading3">Best-Selling Women\'s Shoes</string>
+    <string name="heading2">WHY YOU\'LL LOVE YOUR ZEROSOLES</string>
+    <string name="content1">Barefoot-Inspired Comfort</string>
+    <string name="content2">5,000 Mile Sole Warranty</string>
+    <string name="content3">Shoes for everything you do</string>
+    <string name="tv1">Natural Fit</string>
+    <string name="tv2">Natural Feel</string>
+    <string name="tv3">Natural Motion</string>
+    <string name="contentTv1">Wide toe boxes let your toes spread and relax. "Zero-drop" non-elevated heel for proper posture.</string>
+    <string name="contentTv2">Our FeelTrue sole protects your foot while giving your brain the feedback and stimulation required.</string>
+    <string name="contentTv3">Flexible soles let your foot bend and flex naturally. Low-to-the-ground design for balance and agility.</string>
+    <string name="footer">All materials on this website © 2024. Feel the World, Inc, 320 Interlocken Parkway, Suite 100, Broomfield, CO 80021, USA.</string>
 </resources>

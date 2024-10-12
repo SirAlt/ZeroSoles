@@ -12,14 +12,58 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/white"-->
+<!--            android:elevation="4dp"-->
+<!--            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--            app:title="@null"-->
+<!--            app:contentInsetStartWithNavigation="0dp">-->
+
+<!--            &lt;!&ndash; Icon Menu (Hamburger) &ndash;&gt;-->
+
+<!--            &lt;!&ndash; Icon Search &ndash;&gt;-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/search_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/baseline_search_24"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:layout_gravity="start" />-->
+
+<!--            &lt;!&ndash; Logo Ở Giữa &ndash;&gt;-->
+<!--            <ImageView-->
+<!--                android:id="@+id/logo"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:src="@drawable/logo"-->
+<!--                android:layout_gravity="center" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/cart_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="15dp"-->
+<!--                android:src="@drawable/baseline_shopping_cart_24"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:layout_gravity="end" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/account_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/baseline_account_circle_24"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:layout_gravity="end" />-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+        <include
+            layout="@layout/toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/light_primary"
-            android:elevation="4dp"
-            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+            android:layout_height="wrap_content" />
 
         <FrameLayout
             android:id="@+id/fragment_container"
