@@ -1,4 +1,4 @@
-package com.example.zerosoles.fragment;
+package com.example.zerosoles.ui.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.example.zerosoles.R;
 
-public class Account extends Fragment implements View.OnClickListener {
+public class Profile extends Fragment implements View.OnClickListener {
 
     private TextView tvUsername, tvFullName, tvEmail, tvGender, tvPasswordData, tvNewPassword, tvPassword, tvCanShip;
     private Button btnEdit, btnSave;

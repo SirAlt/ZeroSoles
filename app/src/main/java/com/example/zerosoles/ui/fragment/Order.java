@@ -1,4 +1,4 @@
-package com.example.zerosoles.fragment;
+package com.example.zerosoles.ui.fragment;
 
 import android.os.Bundle;
 

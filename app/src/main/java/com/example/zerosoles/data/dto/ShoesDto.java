@@ -1,4 +1,4 @@
-package com.example.zerosoles.model;
+package com.example.zerosoles.data.dto;
 
 import android.icu.math.BigDecimal;
 
@@ -6,19 +6,19 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Shoe {
+public class ShoesDto {
     private @DrawableRes int imageId;
     private String name;
     private @NonNull BigDecimal price;
     private @Nullable BigDecimal newPrice;
 
-    public Shoe(int imageId, String name, @NonNull BigDecimal price) {
+    public ShoesDto(int imageId, String name, @NonNull BigDecimal price) {
         this.imageId = imageId;
         this.name = name;
         this.price = price;
     }
 
-    public Shoe(int imageId, String name, @NonNull BigDecimal price, @Nullable BigDecimal newPrice) {
+    public ShoesDto(int imageId, String name, @NonNull BigDecimal price, @Nullable BigDecimal newPrice) {
         this.imageId = imageId;
         this.name = name;
         this.price = price;

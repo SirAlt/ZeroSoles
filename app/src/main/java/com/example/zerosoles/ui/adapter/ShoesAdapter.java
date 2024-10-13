@@ -1,4 +1,4 @@
-package com.example.zerosoles.adapter;
+package com.example.zerosoles.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -16,14 +16,14 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.example.zerosoles.R;
-import com.example.zerosoles.model.Shoe;
+import com.example.zerosoles.data.dto.ShoesDto;
 
 import java.util.List;
 import java.util.Locale;
 
-public class ShoeAdapter extends ArrayAdapter<Shoe> {
+public class ShoesAdapter extends ArrayAdapter<ShoesDto> {
 
-    public ShoeAdapter(@NonNull Context context, int resource, @NonNull List<Shoe> objects) {
+    public ShoesAdapter(@NonNull Context context, int resource, @NonNull List<ShoesDto> objects) {
         super(context, resource, objects);
     }
 
@@ -36,25 +36,25 @@ public class ShoeAdapter extends ArrayAdapter<Shoe> {
             convertView = inflater.inflate(R.layout.row_shoe, parent, false);
         }
 
-        Shoe shoe = getItem(position);
-        assert shoe != null;
+        ShoesDto shoes = getItem(position);
+        assert shoes != null;
 
         ImageView imgShoe = convertView.findViewById(R.id.imgShoe);
-        imgShoe.setImageResource(shoe.getImageId());
+        imgShoe.setImageResource(shoes.getImageId());
 
         TextView tvShoeName = convertView.findViewById(R.id.tvShoeName);
-        tvShoeName.setText(shoe.getName());
+        tvShoeName.setText(shoes.getName());
 
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance(Locale.US);
 
         TextView tvShoePrice = convertView.findViewById(R.id.tvShoePrice);
-        BigDecimal price = shoe.getPrice();
+        BigDecimal price = shoes.getPrice();
         BigDecimal displayPrice = price.setScale(2, BigDecimal.ROUND_HALF_EVEN);
         String priceText = numberFormat.format(displayPrice);
         tvShoePrice.setText(priceText);
 
         TextView tvShoeNewPrice = convertView.findViewById(R.id.tvShoeNewPrice);
-        BigDecimal newPrice = shoe.getNewPrice();
+        BigDecimal newPrice = shoes.getNewPrice();
         if (newPrice != null) {
             int disabledColor = ContextCompat.getColor(context, R.color.grey_disabled);
             tvShoePrice.setTextColor(disabledColor);

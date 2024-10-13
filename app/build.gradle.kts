@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.zerosoles"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -37,6 +37,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    packaging {
+        resources.excludes.add("META-INF/*")
+    }
 }
 
 dependencies {
@@ -45,11 +49,20 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.annotation)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
+    implementation(libs.mysql.connector.java)
+    implementation(libs.jakarta.mail.api)
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 secrets {

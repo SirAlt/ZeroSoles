@@ -1,4 +1,4 @@
-package com.example.zerosoles.utils;
+package com.example.zerosoles.ui.dialog;
 
 import android.Manifest;
 import android.app.Activity;

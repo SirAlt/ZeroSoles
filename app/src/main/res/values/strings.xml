@@ -8,6 +8,7 @@
     <string name="slogan">Sole Searching? Find Zero at ZeroSoles!</string>
 
     <string name="title_home">Home</string>
+    <string name="title_login">Log in</string>
     <string name="title_account">Account</string>
     <string name="title_contact">Contact</string>
     <string name="title_support">Support</string>
@@ -22,4 +23,33 @@
     <string name="title_activity_stores_near_you">StoresNearYouActivity</string>
     <string name="permission_rationale_location">We need your approximate location to better determine which stores are close by.</string>
     <string name="permission_required">Location permissions are required for this feature to work.</string>
+
+    <!-- Strings related to login -->
+    <string name="header_log_in">Get Started</string>
+    <string name="tab_login">Login</string>
+    <string name="tab_signup">Signup</string>
+    <string name="hint_username_or_email">Username or Email</string>
+    <string name="hint_password">Password</string>
+    <string name="action_login">Log in</string>
+    <string name="err_required_field">This field is required</string>
+    <string name="err_invalid_login_credentials">Verification failed. Please check your username/email and password.</string>
+    <string name="err_account_deactivated">Your account has been de-activated. Contact support for more details.</string>
+    <string name="err_network">A network issue has occurred. Please try again later.</string>
+    <string name="err_other">An error has occurred.</string>
+
+    <!-- Strings related to signup -->
+    <string name="header_signup">Become a Member</string>
+    <string name="invalid_email">Invalid email format</string>
+    <string name="invalid_password">Password must be >8 characters</string>
+    <string name="action_signup">Sign up</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email (optional)</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="err_confirm_password_mismatch">Passwords do not match.</string>
+    <string name="err_invalid_email">Invalid email address.</string>
+    <string name="err_invalid_password">Password must be at least %1$d characters long and contain a lowercase letter, an uppercase letter, a digit, and a special character.</string>
+    <string name="err_duplicate_username">Username is already taken.</string>
+    <string name="err_duplicate_email">There is already an account associated with this email.</string>
+    <string name="prompt_confirm_logout">Are you sure you want to log out? We\'d miss you.</string>
+    <string name="prompt_signup_success">You\'ve successfully become a member. Would you like to sign in?</string>
 </resources>
