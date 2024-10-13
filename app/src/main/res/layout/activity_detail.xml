@@ -64,14 +64,37 @@
                         android:textSize="14sp"
                         android:textColor="#000000" />
                 </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                <!-- Product Image -->
-                <ImageView
-                    android:id="@+id/product_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/shoes" />
+                    <!-- Product Image -->
+                    <ImageButton
+                        android:id="@+id/btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/baseline_keyboard_arrow_left_24" />
+
+                    <ImageView
+                        android:id="@+id/product_image"
+                        android:layout_width="335dp"
+                        android:layout_height="200dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/shoes" />
+
+                    <ImageButton
+                        android:id="@+id/btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_keyboard_arrow_right_24"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
 
                 <!-- Image Navigation Buttons -->
                 <LinearLayout
@@ -143,7 +166,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="White"
-                    android:background="@drawable/size_button_background" />
+
+                    android:background="@drawable/size_button_background"/>
 
                 <!-- Size Options -->
                 <TextView
@@ -229,7 +253,255 @@
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:layout_marginTop="16dp" />
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/img2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5,000 mile sole warranty" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/img3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5,000 mile sole warranty" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/img2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5,000 mile sole warranty" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:text="Customer Reviews"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/avgRating"
+                    android:text="4.7"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RatingBar
+                    android:id="@+id/ratingBar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:isIndicator="true"
+                    android:progressDrawable="@drawable/rating_bar_star"
+                    android:layout_marginEnd="8dp" />
+                </LinearLayout>
+                <TextView
+                    android:text="Based on 42 Reviews"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- User Info Layout -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- User Avatar (ImageView) -->
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/account"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="centerCrop"/>
+
+                        <!-- User Info (Name and Verified Badge) -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- User Name and Verified Buyer -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Donald O."
+                                    android:textStyle="bold"
+                                    android:textSize="16sp"/>
+                            </LinearLayout>
+
+                            <!-- Country and Date -->
+                            <RatingBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="34dp"
+                                android:layout_marginTop="8dp"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressDrawable="@drawable/rating_bar_star"
+                                android:rating="5" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Rating Bar -->
+
+
+                    <!-- Review Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Just what I wanted"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"/>
+
+                    <!-- Review Content -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="This is my second pair of Xero shoes. I love my HFS running shoes, so I tried the Dillon. So happy. I love the feel of minimalist shoes. These Dillon shoes are just the style I wanted with the comfort and feel I desire. My HFS are holding up very well with many, many miles on them, and I expect these will last just as long. I’ll be adding more Xero styles to my wardrobe."
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
 
             </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="170dp"
+                android:layout_height="100dp"/>
+            <TextView
+                android:text="LET US HELP YOU"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginVertical="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Sizing Instruction"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Privacy"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Tearms of Service"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Be a Zero Soles Affiliate"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Avoiding Fake Sites"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="About Us"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Accessibility Support"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/ig"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"/>
+                <ImageView
+                    android:src="@drawable/fb"
+                    android:layout_width="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="40dp"/>
+                <ImageView
+                    android:src="@drawable/yt"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"/>
+            </LinearLayout>
+            <TextView
+                android:text="@string/footer"
+                android:layout_marginVertical="30dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
