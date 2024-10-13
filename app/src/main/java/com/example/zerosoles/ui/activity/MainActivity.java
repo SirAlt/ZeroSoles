@@ -17,11 +17,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.zerosoles.R;
 import com.example.zerosoles.auth.SessionManager;
 import com.example.zerosoles.data.entity.User;
-import com.example.zerosoles.ui.fragment.Profile;
 import com.example.zerosoles.ui.fragment.Contact;
 import com.example.zerosoles.ui.fragment.Home;
 import com.example.zerosoles.ui.fragment.Login;
 import com.example.zerosoles.ui.fragment.Order;
+import com.example.zerosoles.ui.fragment.Profile;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setTitle(null);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(android.R.color.black));
         toggle.syncState();
 
         SessionManager.getInstance().addListener(this);

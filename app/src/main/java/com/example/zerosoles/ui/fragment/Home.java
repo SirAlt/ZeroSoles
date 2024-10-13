@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zerosoles.R;
-import com.example.zerosoles.ui.adapter.ShoesAdapter;
 import com.example.zerosoles.data.dto.ShoesDto;
+import com.example.zerosoles.ui.adapter.ShoesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +30,8 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        ListView lvShoes = view.findViewById(R.id.lvShoes);
-        ShoesAdapter shoesAdapter = new ShoesAdapter(getActivity(), R.layout.row_shoe, new ArrayList<>(SHOES));
+        RecyclerView lvShoes = view.findViewById(R.id.recyclerViewShoes);
+        ShoesAdapter shoesAdapter = new ShoesAdapter(getActivity(), new ArrayList<>(SHOES));
         lvShoes.setAdapter(shoesAdapter);
 
         return view;
