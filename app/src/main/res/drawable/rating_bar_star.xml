@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Empty Star (background) -->
+    <item android:id="@android:id/background"
+        android:drawable="@android:drawable/star_off" />
+
+    <!-- Full Star (foreground when filled) -->
+<!--    <item android:id="@android:id/progress">-->
+<!--        <clip>-->
+<!--            <bitmap-->
+<!--                android:src="@android:drawable/star_on"-->
+<!--                android:tint="#ff0"-->
+<!--                android:gravity="fill_horizontal"/>-->
+<!--        </clip>-->
+<!--    </item>-->
+
+    <!-- Partial Star (for partially filled stars) -->
+<!--    <item android:id="@android:id/secondaryProgress">-->
+<!--        <clip>-->
+<!--            <bitmap-->
+<!--                android:src="@android:drawable/star_on"-->
+<!--                android:tint="#ffcc00"-->
+<!--                android:gravity="fill_horizontal"/>-->
+<!--        </clip>-->
+<!--    </item>-->
+</layer-list>

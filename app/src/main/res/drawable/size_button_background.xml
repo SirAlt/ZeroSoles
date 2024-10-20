@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when the button is pressed -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#d1e0e0" /> <!-- Background color when pressed -->
+            <corners android:radius="8dp" />   <!-- Rounded corners -->
+            <stroke android:width="2dp" android:color="#00695C" /> <!-- Border when pressed -->
+        </shape>
+    </item>
+
+    <!-- State when the button is selected -->
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="#80CBC4" /> <!-- Background color when selected -->
+            <corners android:radius="8dp" />
+            <stroke android:width="2dp" android:color="#004D40" /> <!-- Border when selected -->
+        </shape>
+    </item>
+
+    <!-- Default state (when the button is not pressed/selected) -->
+    <item>
+        <shape>
+            <solid android:color="#ffffff" /> <!-- Default background color -->
+            <corners android:radius="8dp" />
+            <stroke android:width="1dp" android:color="#B0BEC5" /> <!-- Default border color -->
+        </shape>
+    </item>
+</selector>
