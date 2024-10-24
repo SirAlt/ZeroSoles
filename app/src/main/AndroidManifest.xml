@@ -18,10 +18,13 @@
         android:theme="@style/Theme.ZeroSoles"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.DetailActivity"
+            android:name=".ui.activity.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"

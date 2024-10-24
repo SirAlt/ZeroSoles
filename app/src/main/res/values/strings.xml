@@ -74,4 +74,6 @@
         <item>Option 2</item>
         <item>Option 3</item>
     </string-array>
+
+    <string name="remove"><u>Remove</u></string>
 </resources>

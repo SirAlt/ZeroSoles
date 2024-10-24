@@ -2,8 +2,11 @@ package com.example.zerosoles.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    ImageButton btnSearch;
+    ImageButton btnSearch, btnCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         btnSearch = findViewById(R.id.search_button);
+        btnCart = findViewById(R.id.cart_button);
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -68,6 +72,15 @@ public class MainActivity extends AppCompatActivity
         btnSearch.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SearchActivity.class);
             startActivity(intent);
+        });
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity", "Cart button clicked");
+                Toast.makeText(MainActivity.this, "Cart button clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
         });
     }
 
